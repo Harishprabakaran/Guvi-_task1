@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Signup</title>
+    <link rel="stylesheet" href="styles/style.css">
+    
+        
+    
+</head>
+<body>
+    <div class="signup">
+        <h2>Signup</h2>  <form name="myform2" action="process-signup.php" method="POST"><div class="temp">
+        <legend>Firstname</legend>
+        <input type="text" name="fname" id="fname" placeholder="Enter Firstname" >
+        <legend>Lastname</legend>
+        <input type="text" name="lname" id="lname" placeholder="Enter Lastname">
+        <legend>Email</legend>
+        <input type="email" name="mail" id="mail" placeholder="Enter email">
+
+        <legend>Password</legend>
+        <input type="password" name="pass" id="pass" placeholder="Enter password">
+        <legend>Confirm Password </legend>
+        <input type="password" name="cpass" id="cpass" placeholder="Re Enter password">
+        <legend>Phone Number</legend>
+        <input type="text" name="idnumber" pattern="[0-9]{10}" placeholder="Enter your 10 digit number"/><br/>
+        
+
+         <button onclick="verify()">submit</button>
+        </div>
+        </form>
+        <h5>Have an account <a href="login_page.html">Login</a> here</h5>
+    </div>
+   
+</body>
+<script>
+  // ...
+
+</script>
+</html>
