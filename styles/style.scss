@@ -1,0 +1,113 @@
+@mixin grid-center {
+  display: grid;
+  place-items: center;
+}
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+}
+
+@mixin input {
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  height: 30px;
+  text-align: center;
+  padding: 3px 7px 3px 0;
+  background: $input-clr;
+}
+@mixin btn {
+  border: none;
+  outline: none;
+  height: 40px;
+  width: 33ch;
+  padding: 5px 0;
+  border-radius: 15px;
+  // font-size: bold;
+  font-weight: 700;
+  margin: 10px 0 0 0;
+}
+
+//common values
+$fonts: poppins;
+$bg1: linear-gradient(to right top, #65efc9, #6cbdeb);
+$containerbg: linear-gradient(
+  to right bottom,
+  rgba(255, 255, 255, 0.2),
+  rgba(255, 255, 255, 0.5)
+);
+$rel: relative;
+$abs: absolute;
+$btnhovclr:black;
+
+
+
+
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  @include grid-center;
+  background: $bg1;
+}
+.container,.signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $containerbg;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.1px);
+  -webkit-backdrop-filter: blur(7.1px);
+  padding: 3em 2.4em 2em 2.4em;
+  @include flex-center;
+  flex-direction: column;
+  font-family: $fonts;
+  position: $rel;
+
+  input[type="text"],
+  [type="password"],[type='email'] {
+    @include input;
+  }
+
+  button {
+    @include btn;
+    transform: scale(1, 1);
+    transition: transform 500ms ease,background-color 1s ease,color 500ms ease;
+  }
+  button:hover {
+    transform: scale(1.1, 1.1);
+    background-color: $btnhovclr;
+    color: white;
+  }
+}
+.container::after{
+    background: url(../assests/icons8-login-rounded-100.png),center,no-repeat;
+    background-size: contain;
+    content: '';
+    position: $abs;
+    z-index: 999;
+    height: 100px;
+    width: 100px;
+    top: -30px;
+    align-self: center;
+}
+
+
+
+//signup form
+.signup::after{
+  
+  background: url(../assests/icons8-signup-100.png),center,no-repeat;
+  background-size: contain;
+  content: '';
+  position: $abs;
+  z-index: 999;
+  height: 100px;
+  width: 100px;
+  top: -30px;
+  align-self: center;
+ 
+
+}
